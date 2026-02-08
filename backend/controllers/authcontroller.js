@@ -180,7 +180,7 @@ const logout = async (req, res) => {
 // send verification otp to user emaiil
 const sendVerifyOtp = async (req, res) => {
   try {
-    const { userId } = req.body;
+    const userId = req.userId;
 
     // Validate userId exists
     if (!userId) {
@@ -236,8 +236,8 @@ const sendVerifyOtp = async (req, res) => {
 
 const verifyEmail = async (req, res) => {
   try {
-    const { otp, userId } = req.body;
-
+    const { otp } = req.body;
+    const userId = req.userId;
     if (!userId || !otp) {
       return res.status(400).json({
         success: false,

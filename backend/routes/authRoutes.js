@@ -23,7 +23,7 @@ authRouter.post("/login", loginLimiter, login);
 authRouter.post("/logout", logout);
 authRouter.post("/send-verify-otp", userAuth, sendOtpLimiter, sendVerifyOtp);
 authRouter.post("/verify-account", userAuth, verifyLimiter, verifyEmail);
-authRouter.post("/is-auth", userAuth, isAuthenticated);
+authRouter.get("/is-auth", userAuth, isAuthenticated);
 authRouter.post("/send-reset-otp", sendOtpLimiter, sendResetOtp);
 authRouter.post("/reset-password", verifyLimiter, resetPassword);
 
